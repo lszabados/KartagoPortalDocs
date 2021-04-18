@@ -1,9 +1,13 @@
 {
   "Languages":[
-	{
+    {
+      "DisplayName" : "English",
+      "Code" : "en",
+      "IsDefault": true
+    },{
       "DisplayName" : "Magyar",
       "Code" : "hu-HU",
-      "IsDefault": true
+      "IsDefault": false
     }
   ]
 }
