@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "text": "Bevezető",
+      "path": "Index.md"
+    },
+    {
+      "text": "Pénzügy",
+      "items": [
+        {
+          "text": "Számlák",
+          "path": "Finance/Invoices.md"
+        },
+        {
+          "text": "XX65 Lap",
+          "path": "Finance/XX65Page.md"
+        },
+        {
+          "text": "Adószám ellenőrzés",
+          "path": "Finance/TaxVerification.md"
+        }
+      ]
+    }
+  ]
+}
