@@ -6,6 +6,10 @@ Ez a dokumentáció a Kartago Tours adminisztrációs weboldalának a leírása.
 
 Jelenleg a dokumentáció nem teljes, kérdésekkel, használattal keresse az adminisztrátort.
 
+## Újdonságok
+
+A [Változások](Changes.md) oldal összefoglalja, hogy a portálon és a dokumentációban milyen újdonságok jelentek meg, valamint milyen hibák lettek javítva. 
+
 ## Elérhetőség
 
 Az oldal jelenelg a https://nav.kartagotours.hu:44357 címen érhető el.
