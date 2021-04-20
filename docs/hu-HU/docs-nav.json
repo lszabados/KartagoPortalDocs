@@ -13,15 +13,15 @@
         },
         {
           "text": "XX65 Lap",
-          "path": "Finance/XX65Page.md",
-          "items" : {
-              "text": "Hibakezelés",
-              "path": "Finance/ErrorHandling.md"
-          }
+          "path": "Finance/XX65Page.md"
         },
         {
           "text": "Adószám ellenőrzés",
           "path": "Finance/TaxVerification.md"
+        }, 
+        {
+          "text": "Hibakezelés",
+          "path": "Finance/ErrorHandling.md"
         }
       ]
     },
