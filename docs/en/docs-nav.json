@@ -21,10 +21,11 @@
         }
       ]
     },
-    {
-      "text": "Változások",
-        "path": "Changes.md"
-      
-    }
+	{
+	  "text": "Változások",
+    "path": "Changes.md"
+		
+	}
+	
   ]
 }

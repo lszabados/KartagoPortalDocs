@@ -1,5 +1,19 @@
 # Változások
 
+## 2.1
+
+2021.04.19
+
+### Változtatások
+- **Saját azonosító** felvétele az oszlopokhoz
+- **Forrás** felvétele az oszlopokhoz
+- [Hibakezelés](Finance/ErrorHandling.md) leírás a dokumentációban.
+
+### Javítások
+- Számla duplikációs hiba javítása
+- SAP lista alapján a számla azonosítása nem a legjobban illeszkedő találatot adta.
+- Nem érvényes adószám esetén leállt a feldolgozás. Javítva, a hibás adószám sora figyelmen kívül hagyva.
+
 ## 2.0
 
 2021.04.15
