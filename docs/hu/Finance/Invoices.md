@@ -95,3 +95,17 @@ Ha elvégeztük a feladatokat, akkor a **Mentés** gombbal zárjuk le és így a
 Ha még nem végeztük el a feladatokat akkor a **Bezárás** gombot használjuk, mert így nem fogjuk elfelejteni a feladatokat.
 
 <img src="images/invoice-messages.png">
+
+## Összehasonlító szűrés
+
+Ez egy gyorsfunkció. Amelyik számlán kiválasztjuk, ott a számla adószámára leszűrődik az adatbázis, minden más szűrést kivéve. Ezzel gyorsan tudjuk a számlához tartozó SAP és NAV számlák meglétét ellenőrizni.
+
+## Hibás SAP sor
+
+Ezzel a funkcióva az adott számla (csak SAP számlára alkalmazható) hibásnak jelölhető meg.
+
+Amikor az SAP-ban egy számlát téves adószámra rögzítünk fel, akkor ezt így nem adthatjuk át a NAV-nak. Az SAP-ban viszont már abban a negyedévben nem lehet javítani, mert le van zárva. Vagyis az SAP export mindenképpen tartalmazza, de a NAV-ba mégsem szabad átadni. Ezeket a rögzített de nem átadandó számlákat tudjuk hibásnak jelölni, így a rendszer nem másolja be a NAV beadványba.
+
+Törölni azért nem lehet ebből a rendszerből, mert a következő betöltéskor a rendszer újra létrehozná.
+
+

@@ -25,6 +25,10 @@
         }
       ]
     },
+    {
+      "text": "EUB",
+      "path": "EUB/EUB.md"
+    },
 	{
 	  "text": "Változások",
     "path": "Changes.md"

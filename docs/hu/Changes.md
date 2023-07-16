@@ -22,11 +22,13 @@
 - **Saját azonosító** felvétele az oszlopokhoz
 - **Forrás** felvétele az oszlopokhoz
 - [Hibakezelés](Finance/ErrorHandling.md) leírás a dokumentációban.
+- Eredmény hibalista végén összesítve azok a hibák, amik a táblázatban nincsenek! (Pl nem létező/üres adószám egy számlánál)
 
 ### Javítások
 - Számla duplikációs hiba javítása
 - SAP lista alapján a számla azonosítása nem a legjobban illeszkedő találatot adta.
 - Nem érvényes adószám esetén leállt a feldolgozás. Javítva, a hibás adószám sora figyelmen kívül hagyva.
+- '65 lapok feltöltése: a művelet hosszú is lehet, ezért háttérszálba került. Amikor végzett email értesítést és képernyő üzenetet küld a rendszer.
 
 ## 2.0
 

@@ -3,12 +3,12 @@
     {
       "DisplayName" : "Angol",
       "Code" : "en",
-      "IsDefault": true
+      "IsDefault": false
     },
     {
       "DisplayName" : "Magyar",
-      "Code" : "hu-HU",
-      "IsDefault": false
+      "Code" : "hu",
+      "IsDefault": true
     }
     
   ]
