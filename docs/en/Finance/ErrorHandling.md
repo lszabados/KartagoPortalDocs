@@ -1,86 +1,85 @@
-# Hibakezelés
+# Troubleshooting
 
-A ´65 nyomtatvány betöltése után egy emailt kapunk, ami egyrészt a legenerált ´65 Nyomtatvány XML file-t tartalmazza és egy szöveges dokumentumot a feldolgozás menetéről és a hibákról.
+After loading the ´65 form, you will receive an email containing both the generated ´65 Form XML file and a text document about the processing and errors.
 
-## Kezelhetetlen hibákról
+## About unhandled errors
 
-A hibák egy része olyan jellegű, amire a program nem ad megoldást, csak felhívja rá a figyelmet.
+Some of the errors are of a nature that the program does not provide a solution for, but only draws attention to them.
 
-### Nincs adószám
+### No tax number
 
-Ha egy SAP sorban nincs adószám, akkor nem lehet szállítót meghatározni. Mivel az M lapok kitöltését szállítónként kell elvégezni ezért az adószám meghatározása nélkül a sorral nem lehet dolgozni.
+If there is no tax number in an SAP line, no vendor can be defined. Since the M-sheets have to be filled in by vendor, the line cannot be worked with without defining the tax number.
 
-Az ilyen sorok esetén figyelmeztetést kapunk, hogy a sor nem dolgozható fel. A sort figyelmen kívül hagyja a rendszer.
+For such rows, a warning is displayed that the row cannot be processed. The line is ignored.
 
-### Adószám hossza nem megfelelő
+### Tax number length is not correct
 
-Ha egy SAP sorban az adószámot elgépeltük, akkor nem lehet szállítót meghatározni. Mivel az M lapok kitöltését szállítónként kell elvégezni ezért az adószám meghatározása nélkül a sorral nem lehet dolgozni.
+If the tax number in an SAP line is typed out, it is not possible to define a vendor. Since the M-sheets have to be filled in by vendor, the line cannot be processed without specifying the tax number.
 
-Az ilyen sorok esetén figyelmeztetést kapunk, hogy a sor nem dolgozható fel. A sort figyelmen kívül hagyja a rendszer.
+For such rows, a warning is given that the row cannot be processed. The line is ignored.
 
-### Az Adószám hibás, NAV rendszeréből nem lehet valid adatokat lekérni
+### Tax number is incorrect, NAV system cannot retrieve valid data
 
-Ha egy SAP sorban hibás adószámot adunk, akkor nem lehet szállítót meghatározni. Mivel az M lapok kitöltését szállítónként kell elvégezni ezért az adószám meghatározása nélkül a sorral nem lehet dolgozni.
+If an incorrect tax number is entered in a SAP line, it is not possible to define a vendor. Since the M-sheets have to be filled in per supplier, it is not possible to work with the line without specifying the tax number.
 
-Az ilyen sorok esetén figyelmeztetést kapunk, hogy a sor nem dolgozható fel. A sort figyelmen kívül hagyja a rendszer.
+For such rows, a warning is given that the row cannot be processed. The line is ignored.
 
-## Felvett számlák hibákkal
+## Recorded invoices with errors
 
-Amikor sikerült az SAP lista alapján az adószámmal a szállítót azonosítani, akkor a számla megtalálható a listában és rákerül az M lapokra.
-Az így megtalált számláknál 3 lehetséges eset van:
+When the vendor is identified by the tax number in the SAP list, the invoice is found in the list and is added to the M tabs.
+There are 3 possible cases for invoices found in this way:
 
-1. NAV Online rendszerből rögzített számlát találtunk a sorhoz. Itt a számla adatok pontosak.
-	- Amennyiben az SAP listán szereplő számlaszám pontosan egyezik a rögzített számla számával, nem lesz a sorhoz megjegyzés fűzve.
-	- Amennyiben a számlaszámok nem pontosan egyeznek meg, a sorhoz a **Ellenőrizze le, hogy a számlaszám megfelelő e** megjegyzés lesz fűzve.
+1. an invoice fixed from NAV Online was found for the line. Here the invoice details are correct.
+	- If the invoice number in the SAP list matches exactly the number of the fixed invoice, no comment will be added to the line.
+	- If the invoice numbers do not match exactly, a comment **Check that the invoice number is correct** will be added to the line.
 	
-2. SAP sor alapján a program generálta a számlát. Ekkor a **Automatikusan generált számla** és a **Ellenőrizze le, hogy a számlaszám megfelelő e.** üzenetek kerülnek a szmlára. 
+2. SAP line is used by the program to generate the invoice. In this case, the messages **Automatically generated invoice** and **Check that the invoice number is the correct e.** will be sent to the SAP system. 
 
-3. Manuálisan rögzített számla esetén van találat. Ez akkor szokott előfordulni, ha NAV-ból nem jön a számla és valamilyen okból már korábbaan rögzítettük kézzel.
-    - Amennyiben a számlaszámok nem pontosan egyeznek meg, a sorhoz a **Ellenőrizze le, hogy a számlaszám megfelelő e** megjegyzés lesz fűzve.
+3. This usually happens when the invoice does not come from NAV and for some reason it has been manually recorded in the past.
+    - If the invoice numbers do not match exactly, a **Check that the invoice number is correct e** comment will be added to the line.
 
-### "Ellenőrizze le, hogy a számlaszám megfelelő e" üzenet 
+### "Check if the account number is correct" message 
 
-Néhány esetben az SAP-ból kapott sor alapján találunk NAV-os számlát, de a számlaszám nem pontosan egyezik meg. A program egy logika alapján a nem teljesen egyező számlákhoz is keres megfelelő NAV számlát.
+In some cases, a NAV invoice is found based on the line from SAP, but the invoice number does not match exactly. The program uses a logic to find a matching NAV invoice for invoices that do not match exactly.
 
-Ilyen esetekben csak valószínű a találat, de a program biztos nem lehet benne, ezért a NAV-os számlához Saját referenciának berakja az SAP-ban rögzített számlaszámot, de a számlához megjelgyzést fűz, hogy nem pontos egyezés, le kell ellenőrizni.
+In such cases, the match is only probable, but the program cannot be sure, so it enters the invoice number recorded in SAP as My Reference for the NAV invoice, but marks the invoice as not an exact match, it needs to be checked.
 
-Amennyiben a párosítás jó volt, csak zárjuk le a megjegyzést.
+If the match was correct, just close the comment.
 
-Amennyiben hibás találat volt a következőket kell tenni:
+If there was an incorrect match the following should be done:
 
-- Elővesszük a számlát, hogy megnézzük nincs e a számlaszám elgépelve.
-- A párosítást megszüntetjük úgy, hogy a **Saját referencia** mezőt kitöröljük.
+- Pull out the invoice to check if the invoice number has been typo'd.
+- We unmatch the account by deleting the **Relate to ** field.
 
-Ezután 2 lehetőség van
+There are then 2 options
 
-1.  Rákeresünk a szállító adószáma alapjn az összes számlára és megnézzük, szerepel e ott a számla. Ha igen, a **Saját referencia** mezőjébe beírjuk az SAP-ba lévő számlaszámot.
-2.	Ha nem találunk illeszkedő számlát, kézzel felrögzítjük a rendszerbe.
+1. search for all invoices based on the vendor's tax number and see if the invoice is included. If so, we enter the invoice number in SAP in the **Supplier reference** field.
+2. If no matching invoice is found, we manually record it in the system.
 
-> Kézi rögzítéskor az eredeti számla alapján vigyük fel a számla adatait pontosan! Amennyiben az SAP számlaszám eltér a valóditól, mentés után módosítsuk és a **Saját referencia** mezőbe írjuk be az SAP-ban lévő számlaszámot.
+> When manually recording, record the invoice details accurately based on the original invoice! If the SAP invoice number is different from the real one, change it after saving and enter the invoice number in SAP in the **Supply reference** field.
 
-> Ha lehet másoljuk ne gépeljük. Fontos, hogy pontosan írjuk be a referenciát, a szünetekkel, jelekkel együtt.
+> Copy if possible, do not type. It is important to enter the reference exactly, including breaks and signs.
 
-### "Automatikusan generált számla" üzenet
+### "Automatically generated invoice" message
 
-Feldolgozás során az SAP számlaszám alapján nincs találat, akkor a rendszer rögzít egy számlát. Ez a számla részleges, dátumokat és összegeket mindenképpen ellenőrizni kell.
+During processing, if no match is found based on the SAP invoice number, an invoice is recorded. This invoice is partial, dates and amounts must be checked in any case.
 
-Első teendő itt is, hogy elővesszük az eredeti számlát és rákeresünk a rendszerben a számlaszámra.
+Here again, the first thing to do is to retrieve the original invoice and search for the invoice number in the system.
 
-> Keresésénél ne felejtsük el kivenni a **Csak nyitott üzenetekkel** pipát.
+> When searching, don't forget to uncheck **Only with open messages**.
 
-- Ha találtunk számlát, akkor az SAP számlaszámmal rögzített számlát töröljük, és a talált NAV számla **Saját azonosító** mazőjébe írjuk be az SAP-ba rögzített számlaszámot.
-- Ha nem találtunk számlát, akkor az előrögzített számlát javítsuk az eredeti számla alapján (számlaszám, dátumok, összegek). A számlaszám mezőbe az eredeti számlán lévő **pontos** számlaszámot írjuk, a **Saját referencia** mezőbe pedig az SAP -ban lévő számlaszámot.
+- If we have found an invoice, we delete the invoice recorded with the SAP invoice number and enter the invoice number recorded in SAP in the **Sort ID** field of the NAV invoice found.
+- If no invoice was found, correct the pre-fixed invoice based on the original invoice (invoice number, dates, amounts). In the invoice number field, enter the **exact** invoice number on the original invoice and in the **variety reference** field, enter the invoice number in SAP.
 
-> Célszerű javítást azzal kezdeni, hogy az előrögzített számlaszámot a vágólapra másoljuk, mert javításnál vagy csak referencia beírásnál csak be kell illeszteni, elkerülve a gépelési hibákat.
+> It is advisable to start a correction by copying the pre-fixed invoice number to the clipboard, because when making a correction or just entering a reference, you only need to paste it, avoiding typing errors.
 
-### "Negatív előjelü számla hivatkozott eredeti számla nélkül" üzenet
+### "Negative sign invoice without referenced original invoice" message
 
-Ha van negatív előjelü számlánk és nem lehet NAV számlával párosítani, akkor két lehetőség van:
+If you have a negative sign account and it cannot be linked to a NAV account, there are two possibilities:
 
-1. Valóban egy negatív előjelü számla. Ezt hagyjuk így, lezárhatjuk az üzeneteket. Hibalistára mindíg kidobja a program, de ne foglalkozzunk vele. Negatív számla nem kerül az M lapokra.
-2. A számla egy módosító számla. Ekkor javítani kell a **Művelet** mező értékét CREATE értékről MODIFY vagy STORNO értékre. Ebben az esetben ki kell tölteni az **Eredeti számlaszám** mezőt. Amennyiben az eredeti számla neincs rögzítve a rendszerbe, rögzítsük. Szintén ki kell keresni az esetlegesen kiállított további módosító számlákat is és ha nincsenek a rendszerben, akkor rögzíteni kell. Figyeljünk oda, hogy az összesnél az **Eredeti számlaszám** mező azonos!
+1. Leave it as it is, we can close the messages. The program always throws it to the error list, but don't bother. A negative account will not be placed on the M-sheets.
+2. The account is a modifying account. In this case, the value of the **Operation** field must be corrected from CREATE to MODIFY or STORNO. In this case, the **Original invoice number** field must be completed. If the original invoice is not recorded in the system, record it. Also look for any additional modifying invoices issued and if they are not in the system, record them. Make sure that the **Original invoice number** field is the same for all of them!
 
-> A nav rendszere megengedi, hogy módosító számla legyen berögzítve, eredeti számla nélkül. Ekkor a **Módosító számla eredeti számla nélkül ** mező be van pipálva. Ez nekünk nem jó, mindenképpen fel kell rögzíteni az eredeti számlát is, mert a bevalláshoz ez kell.
+> The nav system allows you to record a modification invoice without the original invoice. In this case, the **Modifying invoice without original invoice ** field is ticked. This is not good for us, we have to record the original invoice as well, because we need it for the return.
 
-> Egyre kevesebb "nem nav" számla lesz a rendszerben, mert elvileg minden számlát már be kell küldeni. 
-
+> There will be less and less "non nav" invoices in the system, because in principle all invoices should already be sent in.

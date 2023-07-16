@@ -1,104 +1,103 @@
-# Adószám ellenőrzés
+# Tax number check
 
-Adószám ellenőrzés funkcióval egy magyar vagy EU-s adószám ellenőrizhető.
+With the Tax number check function you can check a Hungarian or EU tax number.
 
-## Magyar adószám ellenőrzése
+## Check Hungarian tax number
 
-Meg kell adni az adószám első 8 számjegyét. Az adószám végén az egy jegyű áfa kódot és a 2 jegyű területi besorolás kódját nem kell megadni, de ha megadjuk sem okoz problémát. A tagoló "-" is benne lehet.
+Enter the first 8 digits of the tax number. The one-digit VAT code and the two-digit territorial classification code at the end of the tax number are not required, but if they are, they are not a problem. The separator "-" can also be included.
 
-> A 8 számjegy után 3 további adattal igazából a rendszer nem dolgozik, ha ott hibás számot adunk meg, az sem okoz gondot. 
+> The system doesn't really work with 3 more digits after the 8 digits, so if you enter an incorrect number there, it's no problem. 
 
-> Figyeljünk, hogy amennyiben nem 8 jegyű adószámot adunk meg, akkor a 3 utolsó szám egyezzen meg a kapott eredménnyel, mert a rendszer csak a 8 számjegyű adószámra keres és találat esetén eltérhet az adószám vége. 
-
-
-### HU előtag az adószámban
-
-Meg lehet adni az EU komform magyar adószámot is ami HU előtag után az adószám 8 számjegye. Ez abban könnyebség, ha valahonnan másoljuk az adószámot, nem kell bajlódni a HU előtag kihagyásával bajlódni.
-
-## EU adószámok
-
-Az EU adószámokat az Európai Únió által üzemeltetett [VIES](https://ec.europa.eu/taxation_customs/vies/?locale=hu) rendszerből végzi a program.
-
-### Uniós adószámok felépítése
+> Please note that if you enter a tax number with more than 8 digits, the last 3 digits must match the result, because the system only searches for the 8 digit tax number and the end of the tax number may be different if it is found. 
 
 
-|Tagállam|Felépítés|Formátum|
+### HU prefix in the tax number
+
+You can also enter the EU comform Hungarian tax number which is the 8 digits of the tax number after the prefix HU. This makes it easier if you copy the tax number from somewhere else, you don't have to bother with omitting the HU prefix.
+
+## EU tax numbers
+
+The EU tax numbers are taken from the [VIES](https://ec.europa.eu/taxation_customs/vies/?locale=hu) system operated by the European Union.
+
+### EU tax number structure
+
+
+|Member State|Development|Format|
 |--------|:--------:|--------|
-|AT-Ausztria|ATU99999999|Egyetlen karaktersor, amely 9 karakterből áll|
-|BE-Belgium|BE0999999999 , BE1999999999|Egyetlen számsor, amely 10 számjegyből áll|
-|BG-Bulgária|BG999999999 , BG9999999999|Egyetlen számsor, amely 9 vagy 10 számjegyből áll|
-|CY-Ciprus|CY99999999L|Egyetlen karaktersor, amely 9 karakterből áll|
-|CZ-Cseh Köztársaság|CZ99999999 , CZ999999999 , CZ9999999999|Egyetlen számsor, amely 8, 9 vagy 10 számjegyből áll|
-|DE-Németország|DE999999999|Egyetlen számsor, amely 9 számjegyből áll|
-|DK-Dánia|DK99 99 99 99	4|egyenként 2 számjegyből álló számsor|
-|EE-Észtország|EE999999999|Egyetlen számsor, amely 9 számjegyből áll|
-|EL-Görögország|EL999999999|Egyetlen számsor, amely 9 számjegyből áll|
-|ES-Spanyolország|ESX9999999X4|Egyetlen karaktersor, amely 9 karakterből áll|
-|FI-Finnország|FI99999999|Egyetlen számsor, amely 8 számjegyből áll|
-|FR-Franciaország|FRXX 999999999|Egy karaktersor, amely 2 karakterből áll és egy számsor, amely 9 számjegyből áll|
-|HR-Horvátország|HR99999999999|Egyetlen számsor, amely 11 számjegyből áll|
-|HU-Magyarország|HU99999999|Egyetlen számsor, amely 8 számjegyből áll|
-|IE-Írország|IE9S99999L, IE9999999WI|Egyetlen karaktersor, amely 8 vagy 9 karakterből áll|
-|IT-Olaszország|IT99999999999|Egyetlen számsor, amely 11 számjegyből áll|
-|LT-Litvánia|LT999999999,LT999999999999|Egyetlen számsor, amely 9 vagy 12 számjegyből áll|
-|LU-Luxemburg|U99999999|Egyetlen számsor, amely 8 számjegyből áll|
-|LV-Lettország|LV99999999999|Egyetlen számsor, amely 11 számjegyből áll|
-|MT-Málta|T99999999|Egyetlen számsor, amely 8 számjegyből áll|
-|NL-Hollandia|NLSSSSSSSSSSSS|Egyetlen karaktersor, amely 12 karakterből áll|
-|PL-Lengyelország|L9999999999|Egyetlen számsor, amely 10 számjegyből áll|
-|PT-Portugália|PT999999999|Egyetlen számsor, amely 9 számjegyből áll|
-|RO-Románia|RO999999999|Egyetlen számsor, amely legalább 2, legfeljebb 10 számjegyből áll|
-|SE-Svédország|SE999999999999|Egyetlen számsor, amely 12 számjegyből áll|
-|SI-Szlovénia|SI99999999|Egyetlen számsor, amely 8 számjegyből áll|
-|SK-Szlovákia|SK9999999999|Egyetlen számsor, amely 10 számjegyből áll|
-|XI-Észak-Írországról|XI999 9999 99, XI999 9999 99 9995, XIGD9996, XIHA9997|1 block of 3 digits, 1 block of 4 digits and 1 block of 2 digits; or the above followed by a block of 3 digits; or 1 block of 5 characters|
+|AT-Austria|ATU99999999|Single character string consisting of 9 characters|
+|BE-Belgium|BE0999999999 , BE1999999999|Single sequence of 10 digits|
+|BG-Bulgaria|BG99999999999 , BG99999999999999|Single sequence of 9 or 10 digits|
+|CY-Ciprus|CY9999999999L|Single character string consisting of 9 characters|
+|CZ-Cseh Republic|CZ99999999999999 , CZ99999999999 , CZ99999999999999|Single sequence of 8, 9 or 10 digits|
+|DE-Germany|DE999999999|Single sequence of 9 digits|
+|DK-Denmark|DK99 99 99 99 4|Series of 2 digits each|
+|EE-Estonia|EE999999999|Single sequence of 9 digits|
+|EL-Greece|EL999999999|Single sequence of 9 digits|
+|ES-Spain|ESX9999999999X4|Single string of 9 characters|
+|FI-Finland|FI9999999999|Single sequence of 8 digits|
+|FR-France|FRXX 99999999999|A sequence of characters consisting of 2 characters and a sequence of 9 digits|
+|HR-Croatia|HR99999999999|Single sequence of 11 digits|
+|HU-Hungary|HU9999999999|Single sequence of 8 digits|
+|IE-Ireland|IE9S99999L, IE9999999WI|Single character string consisting of 8 or 9 characters|
+|IT-Italy|IT99999999999|Single sequence of 11 digits|
+|LT-Lithuania|LT99999999999,LT9999999999999999|Single sequence of 9 or 12 digits|
+|LU-Luxembourg|U99999999|Single sequence of 8 digits|
+|LV-Latvia|LV9999999999999|Single sequence of 11 digits|
+|MT-Malta|T9999999999|Single sequence with 8 digits|
+|NL-Holland|NLSSSSSSSSSSSSSSSS|Single string of 12 characters|
+|PL-Poland|L999999999999|Single sequence of 10 digits|
+|PT-Portugal|PT999999999|Single sequence of 9 digits|
+|RO-Romania|RO999999999|Single sequence with at least 2 digits and up to 10 digits|
+|SE-Sweden|SE9999999999999999|Single sequence with 12 digits|
+|SI-Slovenia|SI999999999999|Single sequence with 8 digits|
+|SK-Slovakia|SK99999999999999|Single sequence with 10 digits|
+|XI-From Ireland|XI999 9999 99, XI999 9999 99 9995, XIGD9996, XIHA9997|1 block of 3 digits, 1 block of 4 digits and 1 block of 2 digits; or the above followed by a block of 3 digits; or 1 block of 5 characters|
 
 
 
-**Jelmagyarázat:**
+**Explanation:**
     
-    - *: A formátum nem tartalmazza a két betűből álló országkódot
-    - 9: számjegy
-    - X: betű vagy számjegy
-    - S: betű; számjegy; vagy a következő jelek egyike: +, *
-    - L: betű
+    - *: The format does not include the two-letter country code
+    - 9: digit
+    - X: letter or digit
+    - S: letter; digit; or one of the following symbols: +, *
+    - L: letter
     
- **Megjegyzések:**
+ **Notes:**
     
-    1. Az országkódot követő első karakter mindig „U”.
-    2. Az országkódot követő első számjegy mindig „0”.
-    3. Az (új) 10 számjegyű formátum úgy jön létre, hogy a (korábbi) 9 számjegyű számsor az elején kiegészül egy nullával.
-    4. Az első és az utolsó karakter lehet betű vagy szám, de nem lehet mindkettő szám.
-    5. Fióktelepet jelöl.
-    6. Kormányhivatalokat jelöl.
-    7. Egészségügyi hatóságokat jelöl.
-    8. Számít a kis- és a nagybetűk közötti különbség. Kérjük, hogy pontosan az itt bemutatott felépítésnek megfelelően írja be a keresőmezőbe az adószámot.    
-    
+    1. The first character following the country code is always 'U'.
+    2. The first digit following the country code is always '0'.
+    3. The (new) 10-digit format is created by adding a zero to the beginning of the (former) 9-digit number sequence.
+    4. The first and last characters can be a letter or a number, but not both.
+    5. Indicates a branch.
+    6. Indicates government offices.
+    7. Indicates health authorities.
+    8. Case-sensitive. Please enter the tax number in the search box exactly as shown here.
 
-### Mit tegyek, ha a vevőm adószámát a rendszer érvénytelennek minősíti?
+### What should I do if my customer's tax number is invalidated by the system?
 
-A Bizottság webhelye valós idejű információkkal szolgáló rendszer, amely a tagállamok által működtetett adatbázisok segítségével ellenőrzi az adószámok érvényességét. Amikor tehát Ön a rendszerben ellenőriz egy adószámot, azt tulajdonképpen a tagállami adatbázison keresztül ellenőrzi.
+The Commission's website is a real-time information system that checks the validity of tax identification numbers using databases managed by the Member States. So when you check a tax number in the system, you are actually checking it against the Member State database.
 
-Ha a rendszer azt jelzi ki, hogy az Ön vevőjének uniós adószáma érvénytelen, a probléma rendezése érdekében forduljon annak az országnak az adóhatóságához, ahol vevőjének székhelye található.
+If the system indicates that your customer's EU VAT number is invalid, you should contact the tax authority in the country where your customer is based to resolve the problem.
 
-### Mit tegyek, ha a rendszer nem működik?
+### What should I do if the system does not work?
 
-A Bizottság webhelye valós idejű információkkal szolgáló rendszer, amely a tagállamok által működtetett adatbázisok segítségével ellenőrzi az adószámok érvényességét. Amikor tehát Ön a rendszerben ellenőriz egy adószámot, azt tulajdonképpen a tagállamiadatbázison keresztül ellenőrzi.
+The Commission's website is a real-time information system that checks the validity of tax identification numbers using databases managed by Member States. So when you check a tax number in the system, you are actually checking it against the Member State database.
 
-Előfordulhat, hogy a rendszer bizonyos időszakokban, a tagállami adatbázisok karbantartása miatt egyes lekérdezéseket nem tud végrehajtani.
+The system may not be able to perform certain queries at certain times due to maintenance of the national databases.
 
-A Bizottság tud erről a problémáról, és azon munkálkodik a tagállamokkal együtt, hogy az adatbázisok a lehető legkevesebb ideig legyenek hozzáférhetetlenek karbantartás és frissítés miatt.
+The Commission is aware of this problem and is working with Member States to ensure that databases are inaccessible for maintenance and updating for as short a period as possible.
 
-### Lekérdezhető-e az adószámhoz tartozó név és cím?
+### Can the name and address associated with the tax number be queried?
 
-Egyes tagállamok lehetővé teszik, hogy a rendszer megjelenítse az adóalany nevét és címét, ha az uniós adószám érvényes. Ha a név és cím nem jelenik meg, az azt jelenti, hogy az adószámot kibocsátó tagállam nem engedélyezi ezeknek az adatoknak a megjelenítését.
+Some Member States allow the system to display the name and address of the taxable person if the EU VAT number is valid. If the name and address are not displayed, this means that the Member State that issued the tax number does not allow this information to be displayed.
 
-A vevőknek joguk van tájékoztatást kapni az adóhatóságuktól arról, hogy az uniós adószámhoz tartozik-e név és/vagy cím.
+Customers have the right to obtain information from their tax authorities on whether the EU VAT number includes a name and/or address.
 
-### Osztrák adószámok
+### Austrian tax numbers
 
-Ausztriánál a helyes előtag az „AT”. Minden osztrák adószám „U” betűvel kezdődik. Amennyiben tehát egy osztrák adószám érvényességét kívánja ellenőrizni, az „AT” után egy „U” betűt kell begépelnie első karakternek.
+For Austria, the correct prefix is "AT". All Austrian tax numbers begin with the letter "U". Therefore, if you want to check the validity of an Austrian tax number, you must enter the letter "U" as the first character after "AT".
 
-### Egy spanyol adószám érvényességét ellenőriztem. A szám érvényes, az adóalany nevét és címét azonban nem jelzi ki a rendszer.
+### I checked the validity of a Spanish tax number. The number is valid but the name and address of the taxable person are not displayed.
 
-Spanyolország esetán az adószám alapján a név és cím információ nem kérdezhető le.
+For Spain, the name and address information cannot be retrieved from the tax number.

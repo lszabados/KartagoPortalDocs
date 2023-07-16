@@ -1,80 +1,80 @@
 # EUB
 
-Az EUB modul az EUB biztosító részére adatszolgáltatást biztosít.
+The EUB module provides data reporting for the EUB insurer.
 
-AZ EUB rendszer működése:
+How the EUB system works:
 
-## Adatbetöltés
+## Data loading
 
-Az ATCOM rendszerből exportált XLSX adatokat a rendszerbe kell tölteni.
+XLSX data exported from the ATCOM system must be loaded into the system.
 
-### Betöltés indítása
+### Start loading
 
 <img src="Upload.png">
 
-"XLSX Uload" feliratnál a "Tallózás..." gombbal ki tudjuk választan az ATCOM rendszer által exportált XLSX kiterjesztású adatfilet.
-A sor végén az "Upload" gombbal elindíthatjuk a betöltést!
+At "XLSX Uload", click on the "Browse..." button to select the XLSX data file with the XLSX extension exported by the ATCOM system.
+At the end of the line, click on "Upload" to start the loading!
 
-> Figyeli, hogy ne legyen adat ismétlődés, vagyis akár ugyan azt az export file-t is be lehet tölteni, a rendszernek nem okoz gondot.
+> Make sure that there are no data repetitions, i.e. you can load the same export file, the system will not have any problems.
 
-> A rendszer figyeli az ATCOM verzió számot. Amennyiben új verzió számmal jön adat, de az adat az EUB szempontjából nem változik, akkor a verziószámot lefrissíti a rendszer, de EUB beküldendő adat nem generálódik!
+> The system monitors the ATCOM version number. If data comes with a new version number, but the data does not change for the EUB, the system updates the version number, but no data to be submitted to the EUB is generated!
 
-Az adatbetöltés hosszú ideig is eltarthat, ezért a feldolgozás a szerveren a háttérben történik. Amennyiben a weboldalt nem zárjuk be, vagy a feldolgozás vége előtt ismét megnyitjuk,akkor a képernyőre üzenet formályában kapunk értesítést, hogy a feldolgozás befejeződött. Ha több gépen is nyitva van az oldal, akkor minden oldalon megjelenik az üzenet.
+Data loading may take a long time, so processing on the server is done in the background. If the web page is not closed or reopened before the end of processing, a message will be displayed on the screen informing you that the processing is finished. If the page is open on more than one machine, the message will be displayed on each machine.
 
-A feldolgozás megkezdéséről és befejezéséről a beállított emailcímekre email értesítést is küld a rendszer.
+An email notification of the start and end of processing will also be sent to the email addresses you have set.
 
-## Betöltött adatok megtekintése
+## View uploaded data
 
-A képernyőn a betöltés sor alatt a szűrés rész található. A mezőket kitöltve majd a "Szűrés" gombra kattintva tudjuk az adatokat szűrni, ami a képernyő alsó részén lévő táblázatban láthatunk.
+On the screen, under the loading line, you will find the filtering section. By filling in the fields and then clicking on the "Filter" button, we can filter the data, which is shown in the table at the bottom of the screen.
 
 <img src="Filter.png">
 
-> Alapértelmezetten minden adat látszódik!
+> By default all data is visible!
 
-> Alapértelmezetten az EUB-nak nem beküldött adat sorai kiszínezve jelnnek meg, amiből azonnal láthatjuk, hogy van beküldendő adat.
+> By default, the rows of data not submitted to the EUB are highlighted, which immediately shows that there is data to submit.
 
-## Betöltött adatok exportálása
+## Export uploaded data
 
-Lehetőség van rá, hogy a szűrt adatokat XLSX fileba mentsük. Az exportált adatok a teljes szúrt sorra vonatkoznak, aminek száma a táblázat alján a lapozó sorban látható.
+It is possible to save the filtered data to an XLSX file. The exported data will be for the entire filtered row, the number of which is shown in the tab row at the bottom of the table.
 
-> Vegyük figyelembe, hogy több ezer sor exportálása esetén akár perceket is várni kell az eredményre! Ha lehet csak leszúrt max pár száz sort exportáljunk!
+> Please note that when exporting thousands of rows, you may have to wait up to minutes for the result! If possible, export only drilled rows - a few hundred rows max!
 
-## Küldés az EUB részére
+## Send to the EUB
 
-A "Küldés az EUB-nak" gombra kattintással, a rendszer egy EUB formátumnak megfelelő CSV filet-t készít és az elkészült file-t az EUB FTP szerverére fel is tölti. A feltöltés tényéről emailben és képernyő üzenetben értesítést küld a rendszer.
+By clicking on the "Send to EUB" button, the system will create a CSV file in the EUB format and upload the file to the EUB FTP server. The system will notify you of the upload via email and screen message.
 
-> Az elküldött adatról a szerveren másolat is készül, ami a rendszerből nem elérhető, adminisztrátor éri el hibakeresés céljából szükség esetén.
+> A copy of the sent data is also made on the server, which is not accessible from the system, but can be accessed by an administrator for debugging purposes if necessary.
 
-> Amennyiben nincs egyetlen még nem elküldött adat sem, a rendszer nem küld semmit, nem kült üres adatcsomagot!
+> If there is no data not yet sent, the system does not send anything, no empty data packet is sent!
 
-> Maga a gomb és a funkció csak az arra jogosult felhasználóknak érhető el!
+> The button and the function itself is only available to authorised users!
 
-## Összes adat
+## All data
 
-Az összes adat gommbal, EUB formátumú CSV fileba ki lehet másolni a teljes adatbázist. Ez hibakeresési, EUB-al történő egyeztetési céllal van, normál esetben ne kell használni.
+All data can be copied to a CSV file in EUB format. This is for debugging, reconciliation with EUB, not normally used.
 
-> Maga a gomb és a funkció csak az arra jogosult felhasználóknak érhető el!
+> The button and the function itself is only available to authorised users!
 
-## Beállítások
+## Settings
 
-Az arra jogosult felhasználóknak a rendszer beállításainál elérhető az EUB rész.
+For authorised users, the EUB section is available in the system settings.
 
-### Értesítések
+### Notifications
 
 <img src="Notification.png">
 
-Email értesítések címzettjeit tudjuk beállítani. Külön a normál, és külön a hiba esetén értesítendők sorolhatóak fel.
+We can set the recipients of email notifications. Separate ones for normal and separate ones for error notifications can be listed.
 
-### FTP szerver
+### FTP server
 
-Az EUB-nak FTP szerverre kell az adatokat feltölteni. Ennek beállításait lehet megadni ezen a részen.
+The EUB must upload the data to an FTP server. Its settings can be configured in this section.
 
 <img src="FtpServer.png">
 
-### Scope beállítások
+### Scope settings
 
-Az EUB szerződésben a különböző Scope-okat időről időre változó Condition értékkel azonosítjuk. Rendszerint évforduló esetén változhat az egyes Scope értékhez tartozó Condition azonosító.
+The different Scopes in the EUB contract are identified by a Condition value that changes from time to time. Normally, the Condition identifier associated with each Scope value may change on an anniversary.
 
-Ezen előre definiált Scope-okhoz tudjuk az érvényben lévő Condition értékeket beállítani.
+For these pre-defined Scopes we can set the current Condition values.
 
 <img src="Conditions.png">

@@ -1,52 +1,52 @@
-# Változások
+# Changes
 
 ## 4.0
 
 2023.07.16
 
-### Változások, Újdonságok
-- **EUB** modul beillesztése a rendszerbe
-- **Hibás SAP sor** funkció
-- **Összehasonlító szűrés** funkció
+### Changes, What's new
+- Adding **EUB** module to the system
+- **Feature of **EUB **EUB
+- **Comparative filtering** function
 
-### Javítások
-- Új számla és számla módosítása dialógus feliratai helyesen jelennek meg
-- Dokumentáció frissítése
-- NAV számla letöltés időtúllépés miatt megszakadt rendszeresen, ezért az egész folyamat háttérszálba került, ahol bármeddig futhat
+### Improvements
+- New invoice and invoice change dialog captions are displayed correctly
+- Update documentation
+- NAV invoice download was regularly interrupted due to timeout, so the whole process was moved to a background thread where it can run for any length of time
 
 ## 2.1
 
 2021.04.19
 
-### Változtatások
-- **Saját azonosító** felvétele az oszlopokhoz
-- **Forrás** felvétele az oszlopokhoz
-- [Hibakezelés](Finance/ErrorHandling.md) leírás a dokumentációban.
-- Eredmény hibalista végén összesítve azok a hibák, amik a táblázatban nincsenek! (Pl nem létező/üres adószám egy számlánál)
+### Changes
+- Addition of **Sort ID** to columns
+- Add **File** to columns
+- [Error Handling](Finance/ErrorHandling.md) description in documentation.
+- At the end of this error list, errors that are not in the table are summarized (e.g. non-existent/void tax number for an invoice)
 
-### Javítások
-- Számla duplikációs hiba javítása
-- SAP lista alapján a számla azonosítása nem a legjobban illeszkedő találatot adta.
-- Nem érvényes adószám esetén leállt a feldolgozás. Javítva, a hibás adószám sora figyelmen kívül hagyva.
-- '65 lapok feltöltése: a művelet hosszú is lehet, ezért háttérszálba került. Amikor végzett email értesítést és képernyő üzenetet küld a rendszer.
+### Corrections
+- Correction of duplicate invoice error
+- Based on SAP list, the invoice identification did not give the best match.
+- Processing stopped in case of invalid tax number. Fixed, incorrect tax number line ignored.
+- Upload '65 sheets: the operation could be long, so it was moved to background thread. When done email notification and screen message is sent.
 
 ## 2.0
 
 2021.04.15
 
-- A 2021-es nyomtatvány támogatása
-- A 2021-es NAV Online adatkapcsolat támogatása (Nav Online 3.0)
-- Új felhasználói felület
-- Dokumentációs rendszer
-- EU adószámok lekérdezésének támogatása
+- Support for form 2021
+- Support for 2021 NAV Online data link (Nav Online 3.0)
+- New user interface
+- Documentation system
+- Support for EU tax number queries
 
 ## 1.0 
 
 2020.06.30
 
-Alaprendszer a 2020 évre.
+Baseline for 2020.
 
-- 2020-as nyomtatvány támogatása
-- számla felvitel támogatása
-- Adószám lekérdezésének
-- Nav Online rendszer adatalekérdezés (Nav Online 2.0)
+- Support for the 2020 form
+- support for invoice uploading
+- Query of tax number
+- Nav Online system data query (Nav Online 2.0)

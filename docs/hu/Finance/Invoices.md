@@ -41,6 +41,8 @@ Az oldal alján lehet a navigációs sávon az egy időben megjelenő számlák 
 
 A számla oszlopok fejléc nevei végénvannak a rendezést jelölő nyilak. Az oszlop névre kattintva, a kiválasztott oszlop szerint növekvő sorbarendezi a számlákat. Ismételt kattintásra csökkenő sorrendbe rendezi a sorokat.
 
+SHIFT+Kattintásra több mező szerint is sorrendbe rendezhetjük az adatokat egyidőben.
+
 <img src="images/invoice-sorting.png">
 
 ## Új számla rögzítése
@@ -100,9 +102,13 @@ Ha még nem végeztük el a feladatokat akkor a **Bezárás** gombot használjuk
 
 Ez egy gyorsfunkció. Amelyik számlán kiválasztjuk, ott a számla adószámára leszűrődik az adatbázis, minden más szűrést kivéve. Ezzel gyorsan tudjuk a számlához tartozó SAP és NAV számlák meglétét ellenőrizni.
 
+<img src="images/invoice-compare.png">
+
 ## Hibás SAP sor
 
 Ezzel a funkcióva az adott számla (csak SAP számlára alkalmazható) hibásnak jelölhető meg.
+
+<img src="images/invoice-compare.png">
 
 Amikor az SAP-ban egy számlát téves adószámra rögzítünk fel, akkor ezt így nem adthatjuk át a NAV-nak. Az SAP-ban viszont már abban a negyedévben nem lehet javítani, mert le van zárva. Vagyis az SAP export mindenképpen tartalmazza, de a NAV-ba mégsem szabad átadni. Ezeket a rögzített de nem átadandó számlákat tudjuk hibásnak jelölni, így a rendszer nem másolja be a NAV beadványba.
 

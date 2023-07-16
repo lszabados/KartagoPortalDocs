@@ -1,28 +1,27 @@
-# Kartago Portál
+# Kartago Portal
 
-## Bevezető
+## Introduction
 
-Ez a dokumentáció a Kartago Tours adminisztrációs weboldalának a leírása.
+This documentation describes the Kartago Tours administration website.
 
-Jelenleg a dokumentáció nem teljes, kérdésekkel, használattal keresse az adminisztrátort.
+At the moment the documentation is incomplete, please contact the administrator with any questions or usage.
 
-## Újdonságok
+## What's new
 
-A [Változások](Changes.md) oldal összefoglalja, hogy a portálon és a dokumentációban milyen újdonságok jelentek meg, valamint milyen hibák lettek javítva. 
+The [Changes](Changes.md) page summarizes what is new in the portal and documentation, and what bugs have been fixed. 
 
-## Elérhetőség
+## Contact details
 
-Az oldal jelenelg a https://portal.kartagotours.hu címen érhető el.
-A dokumentációs rész eléréséhez is jogosultság szükséges!
+The page is available at https://portal.kartagotours.hu.
+Access to the documentation section is also required!
 
-## Belépési adatok
+## Login details
 
-A felületre a Kartagotours dolgozói a számítógépes felhasználónevükkel és jelszavukkal tudnak belépni. Regisztrálni nem tudják magukat, azt az adminisztrátor végzi el, amennyiben írásban kérte tőle a terület vezetője.
+Kartagotours employees can access the site with their computer username and password. They cannot register themselves, but the administrator will do so if requested in writing by the area manager.
 
-## Jogosultságok
+## Privileges
 
-Az egyes funkciókhoz a jogosultságokat kérni kell, akár a regisztrációkor.
+Privileges for certain functions must be requested, even at the time of registration.
 
-Van hozzáférési jogosultság, ezzel az adott funkciót el lehet érni és használni lehet.
-Amennyiben egy funkciónál létrehozási, módosítási, törlési lehetőségek is vannak, ott ezeket külön kell kérni, hozzáférési joggal csak olvasási jogunk van.
-
+There are access privileges, which allow access to and use of a particular function.
+If a function also has creation, modification, deletion rights, these must be requested separately, with access rights you only have read access.

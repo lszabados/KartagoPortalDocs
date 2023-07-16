@@ -1,26 +1,26 @@
 {
   "items": [
     {
-      "text": "Bevezető",
+      "text": "Introduction",
       "path": "Index.md"
     },
     {
-      "text": "Pénzügy",
+      "text": "Finance",
       "items": [
         {
-          "text": "Számlák",
+          "text": "Invoices",
           "path": "Finance/Invoices.md"
         },
         {
-          "text": "XX65 Lap",
+          "text": "XX65 page",
           "path": "Finance/XX65Page.md"
         },
         {
-          "text": "Adószám ellenőrzés",
+          "text": "Tax number check",
           "path": "Finance/TaxVerification.md"
         }, 
         {
-          "text": "Hibakezelés",
+          "text": "Troubleshooting",
           "path": "Finance/ErrorHandling.md"
         }
       ]
@@ -30,7 +30,7 @@
       "path": "EUB/EUB.md"
     },
 	{
-	  "text": "Változások",
+	  "text": "Changes",
     "path": "Changes.md"
 		
 	}

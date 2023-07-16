@@ -12,8 +12,8 @@ Az ATCOM rendszerből exportált XLSX adatokat a rendszerbe kell tölteni.
 
 <img src="Upload.png">
 
-"XLSX Uload" feliratnál a "Tallózás..." gombbal ki tudjuk választan az ATCOM rendszer által exportált XLSX kiterjesztású adatfilet.
-A sor végén az "Upload" gombbal elindíthatjuk a betöltést!
+"XLSX feltöltés" feliratnál a "Tallózás..." gombbal ki tudjuk választan az ATCOM rendszer által exportált XLSX kiterjesztású adatfilet.
+A sor végén az "Feltöltés" gombbal elindíthatjuk a betöltést!
 
 > Figyeli, hogy ne legyen adat ismétlődés, vagyis akár ugyan azt az export file-t is be lehet tölteni, a rendszernek nem okoz gondot.
 
