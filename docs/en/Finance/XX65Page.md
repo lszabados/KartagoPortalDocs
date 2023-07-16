@@ -54,7 +54,7 @@ A **Feltöltés** gombbal indíthatjuk a programot.
 
 <img src="images/65page-view.png">
 
-A program a folyamat végén átmegy a [számlák](Finance/Invoices.md) modulra.
+A program azonnal átmegy [számlák](Finance/Invoices.md) modulra. Ekkor az adatfeldolgozás és betöltés nem történt meg, változás az adatokban nincs. A műveletet háttérfolyamat végzi és percekig is eltart. Amikor végez képernyő üzenetet küld, valamint emailben elküldi az eredményeket.
 
 
 ## Eredmény
@@ -62,6 +62,8 @@ A program a folyamat végén átmegy a [számlák](Finance/Invoices.md) modulra.
 A program futásának az eredménye egy email, ami 2 mellékletet tartalmaz. Egy hibalista, és egy XML file.
 
 A hibalista a futás közben észlelt hibákat tartalmazza. Amíg olyan hibát tartalmaz a lista amit javítani kell, addíg az XML file nem pontos.
+
+A hibalista végén egy külön részen azon hibák, amelyek a betöltött táblázatban nincsenek (nyitott üzenetek részen). Ez akkor lehetséges, ha a rendszer olyan számlasort talál, amit nem tud betölteni a táblázatba. Ilyen pl. a hibás vagy üres adószám. A rendszer csak ellenőrzötten jó adószámot enged meg, vagyis minden esetben a NAV rendszerében leellenőrzi az adószámot. Amennyiben ez sikertelen, a rendszer a számlát nem tudja felvenni, hiányozni fog a táblázatból.
 
 Az XML filet, az ÁNYK rendszerbe kell betölteni. Az ÁNYK rendszerben minden megnyitott nyomtatványt be kell zárni, ekkor a ```` szervíz/Egyedi Importálás```` menüpont elérhető. Itt kell kiválasztani az emailből lementett XML file-t.
 
@@ -82,7 +84,9 @@ Meg kell adni egyesével a szállító számláit: számlaszám, a számlák ki�
 ### 02-K jelölésű lapok
 
 Itt azokat a számlákat kell felsorolni, amik módosító számlák voltak ezért volt eredeti számla korábban.
-Nem csak a visszaigénylésben érintett számlát kell felsorolni, hanem az eredeti és kiállítás sorrendjében az össze módosító számlát is. Külön jelölés van arra, ezek közül ebben a bevallásban elyiket vesszük figyelembe és melyeket vettük korábban már figyelembe.
+Nem csak a visszaigénylésben érintett számlát kell felsorolni, hanem az eredeti és kiállítás sorrendjében az össze módosító számlát is. Külön jelölés van arra, ezek közül ebben a bevallásban melyiket vesszük figyelembe és melyeket vettük korábban már figyelembe.
+
+> Új NAV iránymutatás alapján, ugyanazon gazdasági eseményre csak egyetlen számla lehet és ennek módosító számlái. Vagyis, amennyiben egy számlát teljesen lerontunk és új számlát állítunk ki, az új számlának hivatkoznia kell az eredeti számlára és ez a számla módosító számlának minősül. A rendszer viszont a számlákat úgy fogja figyelembe venni, ahogy a NAV-ba bent van, vagy ahogyan rögzítésre került. Ez alapján ha a partner nem az előírás szerint állítja ki a számlákat, akkor vagy befogadjuk hibásan és így is jelentjük a NAV felé, vagy nem fogadjuk be és a partnerrel javítattjuk.
 
 ### SAP adatok és a hibalehetőségek
 

@@ -1,5 +1,19 @@
 # Változások
 
+## 4.0
+
+2023.07.16
+
+### Változások, Újdonságok
+- **EUB** modul beillesztése a rendszerbe
+- **Hibás SAP sor** funkció
+- **Összehasonlító szűrés** funkció
+
+### Javítások
+- Új számla és számla módosítása dialógus feliratai helyesen jelennek meg
+- Dokumentáció frissítése
+- NAV számla letöltés időtúllépés miatt megszakadt rendszeresen, ezért az egész folyamat háttérszálba került, ahol bármeddig futhat
+
 ## 2.1
 
 2021.04.19

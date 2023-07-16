@@ -12,13 +12,12 @@ A [Változások](Changes.md) oldal összefoglalja, hogy a portálon és a dokume
 
 ## Elérhetőség
 
-Az oldal jelenelg a https://nav.kartagotours.hu:44357 címen érhető el.
-A dokumentációs rész publikus, de minden további funkcióhoz be kell jelentkezni!
+Az oldal jelenelg a https://portal.kartagotours.hu címen érhető el.
+A dokumentációs rész eléréséhez is jogosultság szükséges!
 
 ## Belépési adatok
 
-A felhasználók nem tudnak regisztrálni az oldalhoz, azt kérésre az adminisztrátor végzi el, egy ideiglenes jelszó megadásával.
-Regisztáláshoz a felhasználó bejelentkezési nneve, teljes neve és email címe kötelező adat, és amennyiben lehet, adjuk meg mobilszámunkat is. Ezeket az információkat kell emailen elküldeni az admin@kartagotours.hu címre. Regisztráció sikerességéről a megadott email címre érkezik válasz.
+A felületre a Kartagotours dolgozói a számítógépes felhasználónevükkel és jelszavukkal tudnak belépni. Regisztrálni nem tudják magukat, azt az adminisztrátor végzi el, amennyiben írásban kérte tőle a terület vezetője.
 
 ## Jogosultságok
 
